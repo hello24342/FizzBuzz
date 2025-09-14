@@ -3,20 +3,24 @@ package lab1;
 public class Multiples {
     public static void main(String[] args) {
 
-        multiples();
+        System.out.println(multiples(100, 3, 5));
     }
 
-    private static void multiples() {
+    static int multiples(int n, int a, int b) {
         int total = 0;
-        for (int i = 1; i < 1000; i++) {
-            boolean divisibleBy3 = i % 3 == 0;
-            boolean divisibleBy5 = i % 5 == 0;
+        for (int i = 1; i < n; i++) {
+            boolean divisibleByA = i % a == 0;
+            boolean divisibleByB = i % b == 0;
             // Print our appropriate result.
-            if (divisibleBy3 || divisibleBy5) {
+            if (divisibleByA || divisibleByB) {
                 total++;
 
             }
         }
-        System.out.println(total);
+        return total;
+    }
+
+    static int multiples() {
+         return multiples(100, 3, 5);
     }
 }
